@@ -6,7 +6,7 @@
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:17:40 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/06 16:26:40 by jcozada          ###   ########.fr       */
+/*   Updated: 2017/10/06 16:30:39 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ char					**ft_strsplit(char const *s, char c)
 	if (str)
 	{
 		size = word_count(str, c);
-		if (!(arr = (char **)malloc((sizeof(char *) * (size + 1)))))
+		if (!(arr = (char **)ft_memalloc((sizeof(char *) * (size + 1)))))
 			return ((char **)0);
 		while (++i < size)
 		{
 			while (*str == c)
 				str++;
 			len = ft_words(str, c) - str;
-			arr[i] = (char *)malloc((len * sizeof(char)) + 1);
+			arr[i] = (char *)ft_memalloc((len * sizeof(char)) + 1);
 			ft_strncpy(arr[i], str, len);
 			str = ft_words(str, c);
 		}
