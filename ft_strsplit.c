@@ -6,7 +6,7 @@
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:17:40 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/06 16:03:14 by jcozada          ###   ########.fr       */
+/*   Updated: 2017/10/06 16:26:40 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static char		*ft_words(char const *s, char c)
 {
 	while (*s && (char)*s != c)
-	s++;
-return ((char *)s);
+		s++;
+	return ((char *)s);
 }
 
 static int		word_count(char const *s, char c)
@@ -38,7 +38,7 @@ static int		word_count(char const *s, char c)
 	return (count);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char					**ft_strsplit(char const *s, char c)
 {
 	char	**arr;
 	char	*str;
