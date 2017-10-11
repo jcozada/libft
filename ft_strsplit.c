@@ -6,7 +6,7 @@
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:17:40 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/07 12:49:31 by jcozada          ###   ########.fr       */
+/*   Updated: 2017/10/11 15:58:24 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char		*ft_words(char const *s, char c)
 
 static int		ft_count(char const *s, char c)
 {
-	int		count;
+	int			count;
 
 	count = 0;
 	while (*s)
@@ -38,13 +38,13 @@ static int		ft_count(char const *s, char c)
 	return (count);
 }
 
-char					**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char	**arr;
-	char	*str;
-	int		len;
-	int		size;
-	int		i;
+	char		**arr;
+	char		*str;
+	int			len;
+	int			size;
+	int			i;
 
 	str = (char *)s;
 	i = -1;

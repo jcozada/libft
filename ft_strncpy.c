@@ -6,7 +6,7 @@
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:16:48 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/05 17:45:20 by jcozada          ###   ########.fr       */
+/*   Updated: 2017/10/11 15:57:04 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	size_t		i;
 	char		*str;
 
 	i = 0;
