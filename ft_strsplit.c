@@ -6,63 +6,52 @@
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:17:40 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/11 15:58:24 by jcozada          ###   ########.fr       */
+/*   Updated: 2017/10/11 16:58:35 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_words(char const *s, char c)
+static char	**ft_strgetworld(char const *s, char **str, size_t size, char c)
 {
-	while (*s && (char)*s != c)
-		s++;
-	return ((char *)s);
-}
+	size_t		i;
+	char const	*start;
 
-static int		ft_count(char const *s, char c)
-{
-	int			count;
-
-	count = 0;
-	while (*s)
+	i = 0;
+	while (i < size)
 	{
-		if (*s != c)
-		{
-			count++;
-			while (*s && *s != c)
-				s++;
-		}
-		else
+		while (*s == c)
 			s++;
+		start = s;
+		while (*s != c && *s)
+			s++;
+		str[i] = ft_strsub(start, 0, (s - start));
+		i++;
 	}
-	return (count);
+	str[i] = 0;
+	return (str);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	char		**arr;
-	char		*str;
-	int			len;
-	int			size;
-	int			i;
+	char	**str;
+	size_t	size;
+	size_t	i;
 
-	str = (char *)s;
-	i = -1;
-	if (str)
+	size = 0;
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
 	{
-		size = ft_count(str, c);
-		if (!(arr = (char **)ft_memalloc((sizeof(char *) * (size + 1)))))
-			return (NULL);
-		while (++i < size)
-		{
-			while (*str == c)
-				str++;
-			len = ft_words(str, c) - str;
-			arr[i] = (char *)ft_memalloc((len * sizeof(char)) + 1);
-			ft_strncpy(arr[i], str, len);
-			str = ft_words(str, c);
-		}
-		return (arr);
+		if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == '\0'))
+			size++;
+		i++;
 	}
-	return (NULL);
+	str = (char**)ft_memalloc((sizeof(str) * size) + 1);
+	if (!str)
+		return (0);
+	i = 0;
+	str = ft_strgetworld(s, str, size, c);
+	return (str);
 }
