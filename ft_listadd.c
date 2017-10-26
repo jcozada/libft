@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_listadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/05 17:17:52 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/25 15:34:25 by jcozada          ###   ########.fr       */
+/*   Created: 2017/10/25 13:37:50 by jcozada           #+#    #+#             */
+/*   Updated: 2017/10/26 12:21:26 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+void	ft_listadd(t_list **str, t_list *new)
 {
-	size_t	i;
-	size_t	j;
+	t_list					*tmp;
 
-	i = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	while (big[i])
+	tmp = *str;
+	if (*str == NULL)
+		*str = new;
+	else
 	{
-		j = 0;
-		while (little[j] == big[i + j] && little[j])
-			j++;
-		if (j == ft_strlen(little))
-			return ((char *)&big[i]);
-		i++;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
-	return (NULL);
 }

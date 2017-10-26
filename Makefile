@@ -6,7 +6,7 @@
 #    By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/05 17:19:44 by jcozada           #+#    #+#              #
-#    Updated: 2017/10/07 12:49:46 by jcozada          ###   ########.fr        #
+#    Updated: 2017/10/26 12:21:10 by jcozada          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,8 @@ SRCS = ft_bzero.c\
   ft_lstadd.c\
   ft_lstiter.c\
   ft_lstmap.c\
-  ft_strndup.c
+  ft_strndup.c\
+	ft_listadd.c
 
 OBJ =	$(SRCS:.c=.o)
 
@@ -96,3 +97,5 @@ fclean:	clean
 		@/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

@@ -6,13 +6,13 @@
 /*   By: jcozada <jcozada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:17:40 by jcozada           #+#    #+#             */
-/*   Updated: 2017/10/11 16:58:35 by jcozada          ###   ########.fr       */
+/*   Updated: 2017/10/11 17:04:47 by jcozada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_strgetworld(char const *s, char **str, size_t size, char c)
+static char		**ft_strgetworld(char const *s, char **str, size_t size, char c)
 {
 	size_t		i;
 	char const	*start;
@@ -32,7 +32,7 @@ static char	**ft_strgetworld(char const *s, char **str, size_t size, char c)
 	return (str);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**str;
 	size_t	size;
